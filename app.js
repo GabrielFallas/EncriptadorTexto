@@ -52,3 +52,24 @@ const desencriptarTexto = (texto) => {
 	//Se toman las palabras del arreglo y se unen en un solo string.
 	return palabras.join(" ");
 };
+
+const inputText = document.querySelector("textarea");
+const resultText = document.querySelector("#resultText");
+const image = document.querySelector("#noTextImage");
+const card = document.querySelector(".card");
+const btnCopy = document.querySelector("#btnCopy");
+const noTextContainer = document.querySelector("#noTextContainer");
+
+inputText.addEventListener("input", () => {
+	if (inputText.value.length === 0) {
+		btnCopy.style.display = "none";
+		resultText.style.display = "none";
+		image.style.display = "block";
+		noTextContainer.style.display = "block";
+	} else {
+		btnCopy.style.display = "block";
+		resultText.style.display = "block";
+		image.style.display = "none";
+		noTextContainer.style.display = "none";
+	}
+});
