@@ -64,8 +64,8 @@ inputText.addEventListener("input", () => {
 	if (inputText.value.length === 0) {
 		btnCopy.style.display = "none";
 		resultText.style.display = "none";
-		image.style.display = "block";
 		noTextContainer.style.display = "block";
+		image.style.display = "block";
 	} else {
 		btnCopy.style.display = "block";
 		resultText.style.display = "block";

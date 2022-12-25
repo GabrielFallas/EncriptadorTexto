@@ -4,12 +4,7 @@ textarea.userInput {
 }
 button {
 	box-sizing: border-box;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
 	padding: 24px;
-	gap: 8px;
-	position: absolute;
 	width: 336px;
 	height: 67px;
 	border: 1px solid #0a3871;
@@ -27,6 +22,7 @@ button p {
 	margin: 0;
 }
 #btnCopy {
+	position: absolute;
 	left: 35px;
 	top: 550px;
 	background-color: #ffffff;
@@ -42,21 +38,17 @@ button p {
 	left: 350px;
 	background-color: #d8dfe8;
 }
-
-#card button {
-	background-color: #ffffff;
-}
 #card {
 	position: absolute;
 	width: 400px;
 	height: 650px;
-	left: 1000px;
-	top: 30px;
+	left: 1100px;
+	top: 80px;
 	background: #ffffff;
 	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.3);
 	border-radius: 32px;
 }
-#card > p {
+#resultText {
 	position: relative;
 	width: 336px;
 	height: 510px;
@@ -72,7 +64,7 @@ button p {
 	border: none;
 	display: none;
 }
-#resultText:focus {
+textarea.userInput:focus {
 	outline: none;
 }
 #card button:hover,
@@ -89,8 +81,8 @@ button p {
 	position: absolute;
 	width: 252px;
 	height: 18px;
-	left: 240px;
-	top: 550px;
+	left: 275px;
+	top: 590px;
 }
 div img.icon {
 	left: 0%;
@@ -123,10 +115,10 @@ div p.warningMessage {
 	position: absolute;
 	width: 680px;
 	height: 67px;
-	left: 240px;
-	top: 582px;
+	left: 300px;
+	top: 633px;
 }
-#card img {
+#noTextImage {
 	position: relative;
 	width: 336px;
 	height: 304px;
@@ -136,14 +128,13 @@ div p.warningMessage {
 #logo {
 	width: 120px;
 	height: 48px;
-	position: relative;
-	top: 15px;
+	top: 30px;
 }
 textarea.userInput {
 	position: absolute;
 	width: 680px;
-	height: 288px;
-	left: 240px;
+	height: 400px;
+	left: 300px;
 	top: 168px;
 	font-family: "Inter";
 	font-style: normal;
@@ -153,9 +144,6 @@ textarea.userInput {
 	resize: none;
 	color: #0a3871;
 	border: none;
-}
-textarea.userInput:focus {
-	outline: none;
 }
 #noTextContainer {
 	position: relative;
@@ -186,4 +174,62 @@ textarea.userInput:focus {
 	line-height: 150%;
 	text-align: center;
 	color: #495057;
+}
+@media (max-width: 430px) {
+	#logo {
+		width: 130px;
+		height: 50px;
+		top: 40px;
+		right: 230px;
+	}
+	textarea.userInput {
+		width: 340px;
+		height: 250px;
+		left: 40px;
+		top: 110px;
+		resize: none;
+		color: #0a3871;
+		border: none;
+	}
+	#warningContainer {
+		left: 40px;
+		top: 370px;
+	}
+	#mainButtonsContainer {
+		left: 40px;
+		top: 400px;
+		flex-direction: column;
+	}
+	#card {
+		width: 340px;
+		height: 500px;
+		left: 40px;
+		top: 580px;
+	}
+	#noTextContainer {
+		top: 45px;
+		left: 5px;
+		height: 125px;
+	}
+	#noTextImage {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		left: 32px;
+		top: 35px;
+	}
+	#resultText {
+		width: 275px;
+		height: 370px;
+		left: 30px;
+		top: 0px;
+	}
+	#btnCopy {
+		width: 280px;
+		left: 30px;
+		top: 410px;
+	}
+	#btnCopy p {
+		width: 230px;
+	}
 }
