@@ -1,3 +1,12 @@
+const inputText = document.querySelector("textarea");
+const resultText = document.querySelector("#resultText");
+const image = document.querySelector("#noTextImage");
+const card = document.querySelector(".card");
+const btnCopy = document.querySelector("#btnCopy");
+const noTextContainer = document.querySelector("#noTextContainer");
+const btnEncrypt = document.querySelector("#btnEncrypt");
+const btnDesencrypt = document.querySelector("#btnDesencrypt");
+
 const mapper = {
 	a: "ai",
 	e: "enter",
@@ -52,13 +61,33 @@ const desencriptarTexto = (texto) => {
 	//Se toman las palabras del arreglo y se unen en un solo string.
 	return palabras.join(" ");
 };
+/**
+ *
+ * @param {String} texto
+ */
+const copiarAlPortapapeles = (texto) => {
+	try {
+		navigator.clipboard.writeText(texto);
+		alert("Texto copiado al portapapeles!");
+	} catch (error) {
+		console.log(error);
+	}
+};
 
-const inputText = document.querySelector("textarea");
-const resultText = document.querySelector("#resultText");
-const image = document.querySelector("#noTextImage");
-const card = document.querySelector(".card");
-const btnCopy = document.querySelector("#btnCopy");
-const noTextContainer = document.querySelector("#noTextContainer");
+btnCopy.addEventListener("click", () => {
+	let texto = resultText.textContent;
+	copiarAlPortapapeles(texto);
+});
+
+btnEncrypt.addEventListener("click", () => {
+	let inputValue = inputText.value;
+	resultText.textContent = encriptarTexto(inputValue);
+});
+
+btnDesencrypt.addEventListener("click", () => {
+	let inputValue = inputText.value;
+	resultText.textContent = desencriptarTexto(inputValue);
+});
 
 inputText.addEventListener("input", () => {
 	if (inputText.value.length === 0) {
