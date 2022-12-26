@@ -11,8 +11,6 @@ button {
 	border-radius: 23px;
 }
 button p {
-	width: 288px;
-	height: 19px;
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 400;
@@ -144,6 +142,7 @@ textarea.userInput {
 	resize: none;
 	color: #0a3871;
 	border: none;
+	padding: 0;
 }
 #noTextContainer {
 	position: relative;
@@ -175,7 +174,51 @@ textarea.userInput {
 	text-align: center;
 	color: #495057;
 }
-@media (max-width: 430px) {
+@media (max-width: 1023px) {
+	textarea.userInput {
+		position: absolute;
+		width: 688px;
+		height: 275px;
+		left: 40px;
+		top: 100px;
+		border: 1px solid black;
+	}
+	#warningContainer {
+		left: 40px;
+		top: 389px;
+	}
+	#mainButtonsContainer {
+		left: 34px;
+		top: 430px;
+		width: 700px;
+	}
+	#card {
+		width: 700px;
+		height: 350px;
+		left: 30px;
+		top: 530px;
+	}
+	#noTextImage {
+		left: 356px;
+		top: 35px;
+	}
+	#noTextContainer {
+		left: 20px;
+		top: -200px;
+	}
+	#resultText {
+		width: 625px;
+		height: 200px;
+		left: 35px;
+		top: 5px;
+	}
+	#btnCopy {
+		left: 35px;
+		top: 256px;
+		width: 630px;
+	}
+}
+@media (max-width: 480px) {
 	#logo {
 		width: 130px;
 		height: 50px;
