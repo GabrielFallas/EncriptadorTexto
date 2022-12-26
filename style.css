@@ -174,7 +174,7 @@ textarea.userInput {
 	text-align: center;
 	color: #495057;
 }
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
 	#logo {
 		top: 20px;
 		left: 32px;
@@ -221,7 +221,7 @@ textarea.userInput {
 		width: 630px;
 	}
 }
-@media (max-width: 480px) {
+@media (max-width: 375px) {
 	textarea.userInput {
 		width: 340px;
 		height: 250px;
