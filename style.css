@@ -1,12 +1,25 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+#container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 100%;
+	width: 65%;
+	gap: 5%;
+}
 body,
-textarea.userInput {
+#userInput {
 	background-color: #e9ecf8;
 }
 button {
 	box-sizing: border-box;
 	padding: 24px;
 	width: 336px;
-	height: 67px;
 	border: 1px solid #0a3871;
 	border-radius: 23px;
 }
@@ -20,11 +33,9 @@ button p {
 	margin: 0;
 }
 #btnCopy {
-	position: absolute;
-	left: 32px;
-	top: 550px;
 	background-color: #ffffff;
 	display: none;
+	width: 85%;
 }
 #btnEncrypt {
 	background-color: #0a3871;
@@ -37,32 +48,25 @@ button p {
 	background-color: #d8dfe8;
 }
 #card {
-	position: absolute;
-	width: 400px;
-	height: 650px;
-	left: 1100px;
-	top: 80px;
+	width: 100%;
+	height: 70%;
 	background: #ffffff;
 	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.3);
 	border-radius: 32px;
 }
 #resultText {
-	position: relative;
-	width: 336px;
-	height: 510px;
-	left: 30px;
-	top: 20px;
+	width: 85%;
+	height: 70%;
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 150%;
-	resize: none;
 	color: #495057;
-	border: none;
 	display: none;
 }
-textarea.userInput:focus {
+
+#userInput:focus {
 	outline: none;
 }
 #card button:hover,
@@ -74,27 +78,9 @@ textarea.userInput:focus {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 0px;
-	gap: 8px;
-	position: absolute;
-	width: 252px;
-	height: 18px;
-	left: 275px;
-	top: 590px;
+	gap: 1%;
 }
-div img.icon {
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-	flex: none;
-	order: 0;
-	flex-grow: 0;
-	display: inline-block;
-}
-div p.warningMessage {
-	width: 228px;
-	height: 18px;
+#warningContainer p {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 400;
@@ -102,38 +88,22 @@ div p.warningMessage {
 	line-height: 150%;
 	color: #495057;
 	opacity: 0.8;
-	display: inline-block;
 }
 #mainButtonsContainer {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
-	padding: 0px;
-	gap: 24px;
-	position: absolute;
-	width: 680px;
-	height: 67px;
-	left: 300px;
-	top: 633px;
-}
-#noTextImage {
-	position: relative;
-	width: 336px;
-	height: 304px;
-	left: 30px;
-	top: 110px;
+	justify-content: center;
+	gap: 15px;
+	width: 100%;
 }
 #logo {
 	position: relative;
 	top: 30px;
 	left: 100px;
 }
-textarea.userInput {
-	position: absolute;
-	width: 680px;
+#userInput {
+	width: 100%;
 	height: 400px;
-	left: 300px;
-	top: 168px;
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 400;
@@ -144,16 +114,8 @@ textarea.userInput {
 	border: none;
 	padding: 0;
 }
-#noTextContainer {
-	position: relative;
-	width: 336px;
-	height: 304px;
-	left: 30px;
-	top: 110px;
-}
 #noTextMsg {
-	width: 336px;
-	height: 58px;
+	width: 100%;
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
@@ -164,7 +126,7 @@ textarea.userInput {
 	margin: 0;
 }
 #infoMsg {
-	width: 336px;
+	width: 100%;
 	height: 48px;
 	font-family: "Inter";
 	font-style: normal;
@@ -174,102 +136,81 @@ textarea.userInput {
 	text-align: center;
 	color: #495057;
 }
-@media (max-width: 768px) {
-	#logo {
-		top: 20px;
-		left: 32px;
+#subcontainer1,
+#subcontainer2,
+#card {
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#subcontainer1 {
+	width: 70%;
+}
+#subcontainer2 {
+	width: 30%;
+}
+#inputContainer {
+	width: 100%;
+}
+#noTextImage,
+#noTextContainer {
+	width: 100%;
+}
+@media (max-width: 1023px) {
+	#container {
+		flex-direction: column;
+		gap: 0;
 	}
-	textarea.userInput {
-		position: absolute;
-		width: 688px;
-		height: 275px;
-		left: 40px;
-		top: 100px;
+	#subcontainer1,
+	#subcontainer2 {
+		width: 100%;
 	}
-	#warningContainer {
-		left: 40px;
-		top: 389px;
+	#subcontainer1 {
+		height: 50%;
 	}
-	#mainButtonsContainer {
-		left: 34px;
-		top: 430px;
-		width: 700px;
+	#subcontainer2 {
+		height: 40%;
 	}
 	#card {
-		width: 700px;
-		height: 350px;
-		left: 30px;
-		top: 530px;
-	}
-	#noTextImage {
-		left: 356px;
-		top: 35px;
+		flex-direction: row;
+		align-items: center;
 	}
 	#noTextContainer {
-		left: 20px;
-		top: -200px;
+		width: 100%;
+	}
+	#noTextContainer {
+		height: 20%;
+	}
+	#inputContainer,
+	#card {
+		height: 100%;
 	}
 	#resultText {
-		width: 625px;
-		height: 200px;
-		left: 35px;
-		top: 5px;
+		height: 60%;
 	}
-	#btnCopy {
-		left: 35px;
-		top: 256px;
-		width: 630px;
+	#noTextImage {
+		display: none;
 	}
 }
-@media (max-width: 375px) {
-	textarea.userInput {
-		width: 340px;
-		height: 250px;
-		left: 40px;
-		top: 110px;
-		resize: none;
-		color: #0a3871;
-		border: none;
-	}
-	#warningContainer {
-		left: 40px;
-		top: 370px;
+@media (max-width: 426px) {
+	#noTextImage {
+		display: none;
 	}
 	#mainButtonsContainer {
-		left: 40px;
-		top: 400px;
 		flex-direction: column;
 	}
-	#card {
-		width: 340px;
-		height: 500px;
-		left: 40px;
-		top: 580px;
+	#btnEncrypt,
+	#btnDesencrypt {
+		width: 100%;
+	}
+	#subcontainer1 {
+		height: 60%;
+	}
+	#subcontainer2 {
+		height: 35%;
 	}
 	#noTextContainer {
-		top: 45px;
-		left: 5px;
-		height: 125px;
-	}
-	#noTextImage {
-		position: relative;
-		width: 300px;
-		height: 300px;
-		left: 32px;
-		top: 35px;
-	}
-	#resultText {
-		width: 275px;
-		height: 370px;
-		left: 30px;
-		top: 0px;
-	}
-	#btnCopy {
-		width: 280px;
-		left: 30px;
-		top: 410px;
-	}
-	#btnCopy p {
-		width: 230px;
+		height: 35%;
 	}
 }
