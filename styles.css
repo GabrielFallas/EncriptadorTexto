@@ -162,7 +162,6 @@ button p {
 @media (max-width: 1023px) {
 	#container {
 		flex-direction: column;
-		gap: 0;
 	}
 	#subcontainer1,
 	#subcontainer2 {
@@ -212,7 +211,7 @@ button p {
 		height: 60%;
 	}
 	#subcontainer2 {
-		height: 35%;
+		height: 40%;
 	}
 	#noTextContainer {
 		height: 35%;
