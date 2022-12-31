@@ -94,7 +94,7 @@ inputText.addEventListener("input", () => {
 		btnCopy.style.display = "none";
 		resultText.style.display = "none";
 		noTextContainer.style.display = "block";
-		if (window.outerWidth > 1024) {
+		if (window.outerWidth >= 1024) {
 			image.style.display = "block";
 		}
 	} else {
