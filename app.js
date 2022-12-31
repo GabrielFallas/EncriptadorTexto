@@ -6,7 +6,6 @@ const btnCopy = document.querySelector("#btnCopy");
 const noTextContainer = document.querySelector("#noTextContainer");
 const btnEncrypt = document.querySelector("#btnEncrypt");
 const btnDesencrypt = document.querySelector("#btnDesencrypt");
-
 const mapper = {
 	a: "ai",
 	e: "enter",
@@ -16,36 +15,12 @@ const mapper = {
 };
 /**
  *
- * @param {String} palabra
- */
-const encriptarPalabra = (palabra) => {
-	return palabra.replace(/[aeiou]/gi, (vocal) => mapper[vocal]);
-};
-/**
- *
  * @param {String} texto
  */
 const encriptarTexto = (texto) => {
 	//Se quitan los espacios extra del texto.
-	const palabras = texto.replace(/\s+/g, " ").split(" ");
-	//Se recorre el array y se encripta cada palabra.
-	palabras.forEach((palabra, indice) => {
-		palabras[indice] = encriptarPalabra(palabra);
-	});
-	//Se toman las palabras del arreglo y se unen en un solo string.
-	return palabras.join(" ");
-};
-/**
- *
- * @param {String} palabra
- */
-const desencriptarPalabra = (palabra) => {
-	palabra = palabra.replace("ai", "a");
-	palabra = palabra.replace("enter", "e");
-	palabra = palabra.replace("imes", "i");
-	palabra = palabra.replace("ober", "o");
-	palabra = palabra.replace("ufat", "u");
-	return palabra;
+	let mensaje = texto.replace(/\s+/g, " ");
+	return mensaje.replaceAll(/[aeiou]/gi, (vocal) => mapper[vocal]);
 };
 /**
  *
@@ -53,13 +28,13 @@ const desencriptarPalabra = (palabra) => {
  */
 const desencriptarTexto = (texto) => {
 	//Se quitan los espacios extra del texto.
-	const palabras = texto.replace(/\s+/g, " ").split(" ");
-	//Se recorre el array y se encripta cada palabra.
-	palabras.forEach((palabra, indice) => {
-		palabras[indice] = desencriptarPalabra(palabra);
-	});
-	//Se toman las palabras del arreglo y se unen en un solo string.
-	return palabras.join(" ");
+	let mensaje = texto.replace(/\s+/g, " ");
+	mensaje = mensaje.replaceAll("ai", "a");
+	mensaje = mensaje.replaceAll("enter", "e");
+	mensaje = mensaje.replaceAll("imes", "i");
+	mensaje = mensaje.replaceAll("ober", "o");
+	mensaje = mensaje.replaceAll("ufat", "u");
+	return mensaje;
 };
 /**
  *
@@ -73,7 +48,14 @@ const copiarAlPortapapeles = (texto) => {
 		console.log(error);
 	}
 };
-
+/**
+ *
+ * @param {String} texto
+ */
+const validarTexto = (texto) => {
+	let regex = new RegExp("[^((0-9)|(a-z)|\\s)]", "g");
+	return regex.test(texto);
+};
 btnCopy.addEventListener("click", () => {
 	let texto = resultText.textContent;
 	copiarAlPortapapeles(texto);
@@ -81,12 +63,20 @@ btnCopy.addEventListener("click", () => {
 
 btnEncrypt.addEventListener("click", () => {
 	let inputValue = inputText.value;
-	resultText.textContent = encriptarTexto(inputValue);
+	if (!validarTexto(inputValue)) {
+		resultText.textContent = encriptarTexto(inputValue);
+	} else {
+		alert("Solo letras minúsculas y sin acento.");
+	}
 });
 
 btnDesencrypt.addEventListener("click", () => {
 	let inputValue = inputText.value;
-	resultText.textContent = desencriptarTexto(inputValue);
+	if (!validarTexto(inputValue)) {
+		resultText.textContent = desencriptarTexto(inputValue);
+	} else {
+		alert("Solo letras minúsculas y sin acento.");
+	}
 });
 
 inputText.addEventListener("input", () => {
