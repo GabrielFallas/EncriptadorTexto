@@ -162,6 +162,7 @@ button p {
 @media (max-width: 1023px) {
 	#container {
 		flex-direction: column;
+		gap: 2%;
 	}
 	#subcontainer1,
 	#subcontainer2 {
@@ -171,7 +172,7 @@ button p {
 		height: 50%;
 	}
 	#subcontainer2 {
-		height: 40%;
+		height: 45%;
 	}
 	#card {
 		flex-direction: row;
@@ -181,7 +182,7 @@ button p {
 		width: 100%;
 	}
 	#noTextContainer {
-		height: 20%;
+		height: 35%;
 	}
 	#card {
 		height: 100%;
@@ -192,10 +193,16 @@ button p {
 	#noTextImage {
 		display: none;
 	}
+	#userInput {
+		height: 70%;
+	}
 }
 @media (max-width: 426px) {
+	#container {
+		gap: 0;
+	}
 	#logo {
-		left: 10%;
+		top: 3%;
 	}
 	#noTextImage {
 		display: none;
@@ -211,12 +218,21 @@ button p {
 		height: 60%;
 	}
 	#subcontainer2 {
-		height: 40%;
+		height: 50%;
 	}
 	#noTextContainer {
 		height: 35%;
 	}
 	#userInput {
-		height: 75%;
+		height: 50%;
+	}
+	#mainButtonsContainer {
+		gap: 10px;
+	}
+	button {
+		padding: 16px;
+	}
+	#card {
+		height: 95%;
 	}
 }
